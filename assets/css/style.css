@@ -1,0 +1,50 @@
+.header{
+    background-color: rgb(252, 102, 102);
+    font-weight: bolder;
+    font-size: 30px;
+    justify-content: center;
+    display: flex;
+    padding: 30px;
+    margin: 20px;
+    border: black;
+    border-radius: 20px;
+    border-style: solid;
+    color: white;
+}
+.card{
+    display: flex;
+    display: block;
+    margin-right: 1900px;
+        
+}
+.title{
+    display: flex;
+    /* justify-content: center; */
+    font-size: larger;
+    font-weight:500;
+    color: white;
+    
+   
+}
+.position{
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+    font-weight:500;
+    color: white;
+}
+.ID{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(253, 237, 216);
+    }
+.email{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(253, 237, 216);
+}
+.misc{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(253, 237, 216);
+}
