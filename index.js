@@ -1,7 +1,7 @@
 // included packages needed for this app
 const fs = require('fs');
 const inquirer = require('inquirer');
-const { inherits } = require('util');
+// const { inherits } = require('util');
 const generateHTML = require('./develop/generateHTML');
 
 const managerQ = [
