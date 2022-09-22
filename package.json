@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/Alathrop2/Team-Profile-Generator#readme",
   "dependencies": {
-    "inquirer": "^9.1.2"
+    "inquirer": "^8.0.0"
   }
 }

@@ -4,6 +4,22 @@ const inquirer = require('inquirer');
 // const { inherits } = require('util');
 const generateHTML = require('./develop/generateHTML');
 
+const startQ = [
+  {
+    type: 'list',
+    message: 'Which team memeber do you want to build?',
+    name: 'Job Title',
+    choices: ['Manager', 'Engineer', 'Intern'],
+  },
+];
+const finalQ = [
+  {
+    type: 'list',
+    message: 'Do you want to add anyone else?',
+    name: 'Final',
+    choices: ['Yes', 'No'],
+  },
+];
 const managerQ = [
   {
     type: 'input',
@@ -73,6 +89,41 @@ const internQ = [
   },
 ];
 
+let employeeData = {
+  managers: [
+    {
+      name: 'testing 1',
+      githubUsername: 'testing1',
+    },
+  ],
+  engineers: [
+    {
+      name: 'testing 1',
+      githubUsername: 'testing1',
+    },
+    {
+      name: 'testing 2',
+      githubUsername: 'testing2',
+    },
+  ],
+  interns: [
+    {
+      name: 'testing 1',
+      githubUsername: 'testing1',
+    },
+  ],
+};
+
+const askFinalQ = () => {
+  inquirer.prompt(finalQ).then((answers) => {
+    if (answers['Final'] == 'Yes') {
+      init();
+    } else {
+      writeToFile('./develop/generateHTML', generateHTML(answers));
+      console.log('your HTML will be added');
+    }
+  });
+};
 //* Create a function to write HTML file
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) => {
@@ -82,9 +133,25 @@ function writeToFile(fileName, data) {
 
 //* Create a function to initialize app
 function init() {
-  inquirer.prompt(managerQ, engineerQ, internQ).then((answers) => {
-    console.log(answers);
-    writeToFile('./develop/generateHTML', generateHTML(answers));
+  inquirer.prompt(startQ).then((answers) => {
+    // console.log(answers['Job Title']);
+    if (answers['Job Title'] == 'Manager') {
+      inquirer.prompt(managerQ).then((answers) => {
+        console.log(answers);
+        askFinalQ();
+      });
+    } else if (answers['Job Title'] == 'Engineer') {
+      inquirer.prompt(engineerQ).then((answers) => {
+        console.log(answers);
+        askFinalQ();
+      });
+    } else if (answers['Job Title'] == 'Intern') {
+      inquirer.prompt(internQ).then((answers) => {
+        console.log(answers);
+        askFinalQ();
+      });
+    }
+    // console.log(answers);
   });
 }
 
@@ -100,10 +167,10 @@ init();
 // WHEN I start the application
 // ? I am prompted to enter the team manager’s name, employee ID, email address, and office number
 // WHEN I enter the team manager’s name, employee ID, email address, and office number
-// todo I am presented with a menu with the option to add an engineer or an intern or to finish building my team
+//? I am presented with a menu with the option to add an engineer or an intern or to finish building my team
 // WHEN I select the engineer option
 // ? I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
 // WHEN I select the intern option
 // ? I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
 // WHEN I decide to finish building my team
-// todo I exit the application, and the HTML is generated
+//? I exit the application, and the HTML is generated

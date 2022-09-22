@@ -25,3 +25,5 @@ function generateHTML(data) {
     </body>
   </html>`;
 }
+
+module.exports;
