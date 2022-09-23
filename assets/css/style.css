@@ -14,8 +14,9 @@
 .card{
     display: flex;
     display: block;
-    margin-right: 1900px;
-        
+    width: 150px;  
+    margin: auto;
+    border-radius: 0%;
 }
 .title{
     display: flex;

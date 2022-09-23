@@ -89,37 +89,15 @@ const internQ = [
   },
 ];
 
-let employeeData = {
-  managers: [
-    {
-      name: 'testing 1',
-      githubUsername: 'testing1',
-    },
-  ],
-  engineers: [
-    {
-      name: 'testing 1',
-      githubUsername: 'testing1',
-    },
-    {
-      name: 'testing 2',
-      githubUsername: 'testing2',
-    },
-  ],
-  interns: [
-    {
-      name: 'testing 1',
-      githubUsername: 'testing1',
-    },
-  ],
-};
+let employeeData = [];
 
 const askFinalQ = () => {
   inquirer.prompt(finalQ).then((answers) => {
     if (answers['Final'] == 'Yes') {
       init();
     } else {
-      writeToFile('./develop/generateHTML', generateHTML(answers));
+      let fileData = generateHTML(employeeData);
+      writeToFile('./index.html', fileData);
       console.log('your HTML will be added');
     }
   });
@@ -137,17 +115,23 @@ function init() {
     // console.log(answers['Job Title']);
     if (answers['Job Title'] == 'Manager') {
       inquirer.prompt(managerQ).then((answers) => {
-        console.log(answers);
+        // console.log(answers);
+        employeeData.push(answers);
+        console.log(employeeData);
         askFinalQ();
       });
     } else if (answers['Job Title'] == 'Engineer') {
       inquirer.prompt(engineerQ).then((answers) => {
-        console.log(answers);
+        // console.log(answers);
+        employeeData.push(answers);
+        console.log(employeeData);
         askFinalQ();
       });
     } else if (answers['Job Title'] == 'Intern') {
       inquirer.prompt(internQ).then((answers) => {
-        console.log(answers);
+        // console.log(answers);
+        employeeData.push(answers);
+        console.log(employeeData);
         askFinalQ();
       });
     }
