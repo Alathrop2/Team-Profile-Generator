@@ -145,7 +145,7 @@ init();
 // WHEN I am prompted for my team members and their information
 //? an HTML file is generated that displays a nicely formatted team roster based on user input
 // WHEN I click on an email address in the HTML
-// todo my default email program opens and populates the TO field of the email with the address
+//? my default email program opens and populates the TO field of the email with the address
 // WHEN I click on the GitHub username
 //? that GitHub profile opens in a new tab
 // WHEN I start the application
