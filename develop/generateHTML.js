@@ -16,7 +16,7 @@ function generateHTML(data) {
     </head>
     <body>
       <header class="header">My Team</header>
-      <div class ="card">
+      <div class ="container">
       ${teamMember}
       </div>
     </body>
@@ -39,7 +39,7 @@ createMember = (data) => {
       <div id="Name" class="title bg-primary">${i.EngineerName}</div>
       <div id="Position" class="position bg-primary">Engineer</div>
       <div class="ID">${i.ID}</div>
-      <div class="email">${i.Github}</div>
+      <div class="email"><a href="https://github.com/${i.Github}">${i.Github}</a></div>
       <div class="misc">${i.Email}</div>
    </div>`;
     } else if ('InternName' in i) {
@@ -52,13 +52,7 @@ createMember = (data) => {
    </div>`;
     }
   });
-  // const memeberData = `<div class="card">
-  //    <div id="Name" class="title bg-primary"></div>
-  //    <div id="Position" class="position bg-primary"></div>
-  //    <div class="ID"></div>
-  //    <div class="email"></div>
-  //    <div class="misc"></div>
-  // </div>`;
+
   return memeberData;
 };
 module.exports = generateHTML;

@@ -11,35 +11,38 @@
     border-style: solid;
     color: white;
 }
-.card {
+.container {
     display: flex;
     margin: auto;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    
 }
 .manager{
     display: flex;
     display: block;
-    width: 150px;  
+    width: 250px;  
     margin: auto;
-    border-radius: 0%;
+    border-radius: 20px;
+    height: auto;
     
 }
 .engineer {
     display: flex;
     display: block;
-    width: 150px;  
+    width: 250px;  
     margin: auto;
-    border-radius: 0%;
     
+    height: auto;
+    border-radius: 20px ;
 }
 .intern {
     display: flex;
-    display: block;
-    width: 150px;  
+    display: inline-block;
+    width: 250px;   
     margin: auto;
-    border-radius: 0%;
+    border-radius: 20px;
+    height: auto;
     
 }
 .title{
@@ -48,7 +51,7 @@
     font-size: larger;
     font-weight:500;
     color: white;
-    
+    border-radius: 20px 20px 0 0;
    
 }
 .position{
@@ -57,19 +60,25 @@
     font-size: larger;
     font-weight:500;
     color: white;
+    
 }
 .ID{
-    display: flex;
+    /* display: flex; */
     justify-content: center;
-    background-color: rgb(253, 237, 216);
+    background-color: rgb(188, 181, 181);
+    padding: 20px;
     }
 .email{
-    display: flex;
+    /* display: flex; */
     justify-content: center;
-    background-color: rgb(253, 237, 216);
+    background-color: rgb(188, 181, 181);
+    padding: 20px;
+    
 }
 .misc{
-    display: flex;
+    /* display: flex; */
     justify-content: center;
-    background-color: rgb(253, 237, 216);
+    background-color: rgb(188, 181, 181);
+    padding: 20px;
+    border-radius: 0 0 20px 20px ;
 }
