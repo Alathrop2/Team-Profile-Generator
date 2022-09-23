@@ -16,7 +16,9 @@ function generateHTML(data) {
     </head>
     <body>
       <header class="header">My Team</header>
+      <div class ="card">
       ${teamMember}
+      </div>
     </body>
   </html>`;
 }
@@ -25,7 +27,7 @@ createMember = (data) => {
   let memeberData = '';
   data.forEach((i) => {
     if ('ManagerName' in i) {
-      memeberData += `<div class="card">
+      memeberData += `<div class="manager">
      <div id="Name" class="title bg-primary">${i.ManagerName}</div>
      <div id="Position" class="position bg-primary">Manager</div>
      <div class="ID">${i.ID}</div>
@@ -33,9 +35,21 @@ createMember = (data) => {
      <div class="misc">${i.OfficeNumber}</div>
   </div>`;
     } else if ('EngineerName' in i) {
-      console.log('hello');
+      memeberData += `<div class="engineer">
+      <div id="Name" class="title bg-primary">${i.EngineerName}</div>
+      <div id="Position" class="position bg-primary">Engineer</div>
+      <div class="ID">${i.ID}</div>
+      <div class="email">${i.Github}</div>
+      <div class="misc">${i.Email}</div>
+   </div>`;
     } else if ('InternName' in i) {
-      console.log('hello');
+      memeberData += `<div class="intern">
+      <div id="Name" class="title bg-primary">${i.InternName}</div>
+      <div id="Position" class="position bg-primary">Intern</div>
+      <div class="ID">${i.ID}</div>
+      <div class="email">${i.Email}</div>
+      <div class="misc">${i.School}</div>
+   </div>`;
     }
   });
   // const memeberData = `<div class="card">

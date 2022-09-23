@@ -11,12 +11,36 @@
     border-style: solid;
     color: white;
 }
-.card{
+.card {
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.manager{
     display: flex;
     display: block;
     width: 150px;  
     margin: auto;
     border-radius: 0%;
+    
+}
+.engineer {
+    display: flex;
+    display: block;
+    width: 150px;  
+    margin: auto;
+    border-radius: 0%;
+    
+}
+.intern {
+    display: flex;
+    display: block;
+    width: 150px;  
+    margin: auto;
+    border-radius: 0%;
+    
 }
 .title{
     display: flex;
